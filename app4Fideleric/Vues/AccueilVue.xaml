@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:app4Fideleric.Vues"
+             x:Class="app4Fideleric.Vues.AccueilVue"
+             Title="AccueilVue">
+    <ContentPage.Resources>
+        <!-- Définition des styles -->
+        <Style x:Key="HeaderLabel" TargetType="Label">
+            <Setter Property="FontSize" Value="56" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="#000000" />
+        </Style>
+        <local:HalfValueConverter x:Key="HalfValueConverter" />
+    </ContentPage.Resources>
+
+    <StackLayout Spacing="0" BackgroundColor="#E3E3E3">
+        <!-- Bloc 1: En-tête avec logo et boutons -->
+        <Grid Padding="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Logo (à gauche) -->
+            <Label Text="FidelEric"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                Style="{StaticResource HeaderLabel}"
+                Margin="0,20,0,20">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Fidel" TextColor="#000000" />
+                        <Span Text="Eric" TextColor="#DBAA2E" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <!-- Bouton déroulant avec options (à droite) -->
+            <Button Text="☰" FontSize="45" FontAttributes="Bold" Clicked="ShowOptions_Clicked" HorizontalOptions="Start" Background="transparent" TextColor="#000000"/>
+            <!-- Menu (caché par défaut) -->
+            <StackLayout x:Name="Menu" 
+                         IsVisible="False" 
+                         BackgroundColor="#000000" 
+                         Padding="20" 
+                         TranslationX="-500" 
+                         HeightRequest="{Binding Source={x:Reference Name=ContentPage}, Path=Height}" 
+                         WidthRequest="{Binding Source={x:Reference Name=ContentPage}, Path=Width, Converter={StaticResource HalfValueConverter}}">
+                <Button Text="Profil" BackgroundColor="#000000" TextColor="#FFFFFF" Clicked="Profil_Clicked" />
+                <Button Text="Badges" BackgroundColor="#000000" TextColor="#FFFFFF" Clicked="Badges_Clicked" />
+                <Button Text="Jouer" BackgroundColor="#000000" TextColor="#FFFFFF" Clicked="Jouer_Clicked" />
+                <Button Text="Amis" BackgroundColor="#000000" TextColor="#FFFFFF" Clicked="Amis_Clicked" />
+                <Button Text="Boutique" BackgroundColor="#000000" TextColor="#FFFFFF" Clicked="Boutique_Clicked" />
+                <Button Text="Paramètres" BackgroundColor="#000000" TextColor="#FFFFFF" Clicked="Paramètres_Clicked" />
+                <Button Text="Se Connecter" BackgroundColor="#000000" TextColor="#FF0000" Clicked="SeConnecter_Clicked" />
+                <Button Text="Fermer" BackgroundColor="#000000" TextColor="#FFFFFF" Clicked="HideOptions_Clicked" />
+            </StackLayout>
+        </Grid>
+
+        <!-- Bloc 2: Affichage du nombre de points de fidélité -->
+        <StackLayout Padding="20">
+            <Label Text="Nombre de points de fidélité : 500" FontSize="20" TextColor="#000000"/>
+        </StackLayout>
+
+        <!-- Bloc 3: Affichage des derniers badges -->
+        <StackLayout Padding="20">
+            <Label Text="Derniers badges gagnés :" FontSize="20" TextColor="#000000"/>
+            <!-- Liste des badges -->
+            <CollectionView ItemsSource="{Binding DerniersBadges}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal" Spacing="10">
+                            <Image Source="{Binding BadgeImage}" HeightRequest="50" WidthRequest="50" />
+                            <Label Text="{Binding Nom}" FontSize="16" VerticalOptions="Center" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <!-- Bouton "Voir plus" -->
+            <Button Text="Voir plus" Clicked="VoirPlus_Clicked" HorizontalOptions="Center" />
+        </StackLayout>
+
+        <!-- Bloc 4: Carrousel avec messages et boutons -->
+        <CarouselView ItemsSource="{Binding CarrouselItems}" HorizontalOptions="FillAndExpand">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="20">
+                        <Label Text="{Binding Message}" FontSize="18" HorizontalOptions="Center" />
+                        <Button Text="{Binding BoutonText}" Clicked="Action_Clicked" HorizontalOptions="Center" />
+                    </StackLayout>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+    </StackLayout>
+</ContentPage>
