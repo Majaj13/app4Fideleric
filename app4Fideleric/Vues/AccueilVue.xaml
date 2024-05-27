@@ -30,29 +30,29 @@
                 Margin="0,20,0,20">
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="Fidel" TextColor="#000000" />
+                        <Span Text="Fidel" TextColor="#353535" />
                         <Span Text="Eric" TextColor="#DBAA2E" />
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
             <!-- Bouton déroulant avec options (à droite) -->
-            <Button Text="☰" FontSize="45" FontAttributes="Bold" Clicked="ShowOptions_Clicked" HorizontalOptions="Start" Background="transparent" TextColor="#000000"/>
+            <Button Text="☰" FontSize="45" FontAttributes="Bold" Clicked="ShowOptions_Clicked" HorizontalOptions="Start" Background="transparent" TextColor="#353535"/>
             <!-- Menu (caché par défaut) -->
             <StackLayout x:Name="Menu" 
                          IsVisible="False" 
-                         BackgroundColor="#000000" 
+                         BackgroundColor="#353535" 
                          Padding="20" 
                          TranslationX="-500" 
-                         HeightRequest="{Binding Source={x:Reference Name=ContentPage}, Path=Height}" 
-                         WidthRequest="{Binding Source={x:Reference Name=ContentPage}, Path=Width, Converter={StaticResource HalfValueConverter}}">
-                <Button Text="Profil" BackgroundColor="#000000" TextColor="#FFFFFF" Clicked="Profil_Clicked" />
-                <Button Text="Badges" BackgroundColor="#000000" TextColor="#FFFFFF" Clicked="Badges_Clicked" />
-                <Button Text="Jouer" BackgroundColor="#000000" TextColor="#FFFFFF" Clicked="Jouer_Clicked" />
-                <Button Text="Amis" BackgroundColor="#000000" TextColor="#FFFFFF" Clicked="Amis_Clicked" />
-                <Button Text="Boutique" BackgroundColor="#000000" TextColor="#FFFFFF" Clicked="Boutique_Clicked" />
-                <Button Text="Paramètres" BackgroundColor="#000000" TextColor="#FFFFFF" Clicked="Paramètres_Clicked" />
-                <Button Text="Se Connecter" BackgroundColor="#000000" TextColor="#FF0000" Clicked="SeConnecter_Clicked" />
-                <Button Text="Fermer" BackgroundColor="#000000" TextColor="#FFFFFF" Clicked="HideOptions_Clicked" />
+                         WidthRequest="{Binding HalfValueConverter}">
+                <Button Text="Profil" BackgroundColor="#353535" TextColor="#FFFFFF" Clicked="Profil_Clicked" />
+                <Button Text="Badges" BackgroundColor="#353535" TextColor="#FFFFFF" Clicked="Badges_Clicked" />
+                <Button Text="Jouer" BackgroundColor="#353535" TextColor="#FFFFFF" Clicked="Jouer_Clicked" />
+                <Button Text="Amis" BackgroundColor="#353535" TextColor="#FFFFFF" Clicked="Amis_Clicked" />
+                <Button Text="Boutique" BackgroundColor="#353535" TextColor="#FFFFFF" Clicked="Boutique_Clicked" />
+                <Button Text="Boutique" BackgroundColor="#353535" TextColor="#FFFFFF" Clicked="CreerProduits_Clicked" />
+                <Button Text="Paramètres" BackgroundColor="#353535" TextColor="#FFFFFF" Clicked="Paramètres_Clicked" />
+                <Button Text="Se Connecter" BackgroundColor="#353535" TextColor="#FF0000" Clicked="SeConnecter_Clicked" />
+                <Button Text="Fermer" BackgroundColor="#353535" TextColor="#FFFFFF" Clicked="HideOptions_Clicked" />
             </StackLayout>
         </Grid>
 

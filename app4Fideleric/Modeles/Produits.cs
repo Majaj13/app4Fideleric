@@ -38,7 +38,7 @@ namespace app4Fideleric.Modeles
 
         #region Getters/Setters
 
-        [JsonProperty("id")]
+        [JsonProperty("UserID")]
         public int Id { get => _id; set => _id = value; }
 
         [JsonProperty("nomProduit")]

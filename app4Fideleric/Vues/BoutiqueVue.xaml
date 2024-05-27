@@ -3,10 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="app4Fideleric.Vues.BoutiqueVue"
              Title="BoutiqueVue">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <StackLayout>
+        <Button Text="Retour à l'accueil" Clicked="ButtonHome" />
+        <Button Text="Afficher produit" Clicked="ButtonVoirProduit" />
+        <ListView x:Name="ProduitsListView" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical" Padding="12">
+                            <Image Source="{Binding imageUrl}" Aspect="AspectFit" HeightRequest="200"/>
+                            <Label Text="{Binding NomProduit}" FontSize="20" />
+                            <Label Text="{Binding PrixProduit}" FontAttributes="Bold" />
+                            <Label Text="{Binding PointsFidelite}" FontAttributes="Italic" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>
