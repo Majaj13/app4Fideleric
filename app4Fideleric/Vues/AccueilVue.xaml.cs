@@ -84,6 +84,10 @@ namespace app4Fideleric.Vues
             // Déconnecter l'utilisateur et naviguer vers la page LoginVue
             Navigation.PushAsync(new ProduitVue());
         }
+        void CreerBadges_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CréerBadgesVue());
+        }
     }
 
     public class HalfValueConverter : IValueConverter

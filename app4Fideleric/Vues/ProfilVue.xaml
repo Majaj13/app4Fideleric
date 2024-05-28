@@ -2,11 +2,64 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="app4Fideleric.Vues.ProfilVue"
-             Title="ProfilVue">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="Profil Utilisateur"
+             Padding="10">
+
+    <StackLayout Spacing="20" VerticalOptions="CenterAndExpand">
+
+        <Label Text="Profil Utilisateur" 
+               FontSize="Large"
+               HorizontalOptions="Center"
+               VerticalOptions="Start"
+               FontAttributes="Bold"/>
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Nom : "
+                   FontSize="Medium"
+                   FontAttributes="Bold"/>
+            <Label x:Name="NomLabel"
+                   FontSize="Medium"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Prénom : "
+                   FontSize="Medium"
+                   FontAttributes="Bold"/>
+            <Label x:Name="PrenomLabel"
+                   FontSize="Medium"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Email : "
+                   FontSize="Medium"
+                   FontAttributes="Bold"/>
+            <Label x:Name="EmailLabel"
+                   FontSize="Medium"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Points de Fidélité : "
+                   FontSize="Medium"
+                   FontAttributes="Bold"/>
+            <Label x:Name="PointFideliteLabel"
+                   FontSize="Medium"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Téléphone : "
+                   FontSize="Medium"
+                   FontAttributes="Bold"/>
+            <Label x:Name="TelephoneLabel"
+                   FontSize="Medium"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Date de Naissance : "
+                   FontSize="Medium"
+                   FontAttributes="Bold"/>
+            <Label x:Name="DateNaissanceLabel"
+                   FontSize="Medium"/>
+        </StackLayout>
+
+    </StackLayout>
 </ContentPage>

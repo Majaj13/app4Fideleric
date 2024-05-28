@@ -66,6 +66,9 @@
 	  <MauiXaml Update="Vues\BoutiqueVue.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Vues\CréerBadgesVue.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Vues\InscriptionVue.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

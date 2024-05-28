@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="app4Fideleric.Vues.CréerBadgesVue"
+             Title="Créer un Badge">
+
+    <StackLayout Padding="10">
+        <Label Text="Nom du Badge" 
+               FontSize="Medium"
+               VerticalOptions="Start"/>
+        <Entry x:Name="NomBlasonEntry"
+               Placeholder="Entrez le nom du badge"
+               VerticalOptions="Start"/>
+
+        <Label Text="Montant des Achats" 
+               FontSize="Medium"
+               VerticalOptions="Start"/>
+        <Entry x:Name="MontantAchatsEntry"
+               Placeholder="Entrez le montant des achats"
+               Keyboard="Numeric"
+               VerticalOptions="Start"/>
+
+        <Button Text="Créer le Badge"
+                Clicked="ButtonCréerBadge"
+                HorizontalOptions="Center"
+                VerticalOptions="Start"
+                Margin="0,10,0,10"/>
+    </StackLayout>
+</ContentPage>

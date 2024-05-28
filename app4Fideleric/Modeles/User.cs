@@ -13,6 +13,7 @@ namespace app4Fideleric.Modeles
         #region Attributs
 
         private int _id;
+        private int _fidelite;
         private string _email;
         private string _nom;
         private string _prenom;
@@ -26,9 +27,10 @@ namespace app4Fideleric.Modeles
 
         public User() { }
 
-        public User(int id, string email, string nom, string prenom, string password, string telephone, DateTime dateNaissance)
+        public User(int id, int fidelite, string email, string nom, string prenom, string password, string telephone, DateTime dateNaissance)
         {
             _id = id;
+            _fidelite = fidelite;
             _email = email;
             _nom = nom;
             _prenom = prenom;
@@ -43,6 +45,9 @@ namespace app4Fideleric.Modeles
 
         [JsonProperty("id")]
         public int Id { get => _id; set => _id = value; }
+
+        [JsonProperty("stockPointFidelite")]
+        public int Fidelite { get => _fidelite; set => _fidelite = value; }
 
         [JsonProperty("email")]
         public string Email { get => _email; set => _email = value; }
