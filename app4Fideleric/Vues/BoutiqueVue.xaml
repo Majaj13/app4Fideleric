@@ -13,8 +13,8 @@
                         <StackLayout Orientation="Vertical" Padding="12">
                             <Image Source="{Binding imageUrl}" Aspect="AspectFit" HeightRequest="200"/>
                             <Label Text="{Binding NomProduit}" FontSize="20" />
-                            <Label Text="{Binding PrixProduit}" FontAttributes="Bold" />
-                            <Label Text="{Binding PointsFidelite}" FontAttributes="Italic" />
+                            <Label Text="{Binding PrixProduit, StringFormat='{0} euro'}" FontAttributes="Bold" />
+                            <Label Text="{Binding PointsFidelite, StringFormat='{0} point(s)'}" FontAttributes="Italic" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
